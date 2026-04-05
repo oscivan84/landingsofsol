@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Softsol — Convierte WhatsApp en un vendedor 24/7</title>
+  <meta name="description" content="Automatizamos tu negocio con IA y WhatsApp. Agentes conversacionales que atienden clientes, organizan tu operación y hacen seguimiento 24/7. Sin contratar más personal." />
+  <meta name="author" content="Oscar Iván Díaz Portilla — Softsol" />
+  <meta name="theme-color" content="#05060a" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+
+  <!-- Open Graph · Facebook / WhatsApp / LinkedIn -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Softsol" />
+  <meta property="og:locale" content="es_CO" />
+  <meta property="og:title" content="Softsol — Convierte WhatsApp en un vendedor 24/7" />
+  <meta property="og:description" content="Automatizamos tu negocio con IA y WhatsApp. Agentes que atienden, venden y hacen seguimiento. Sin contratar más personal." />
+  <meta property="og:url" content="https://softsol.com.co/" />
+  <meta property="og:image" content="https://softsol.com.co/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Softsol · Convierte WhatsApp en un vendedor 24/7" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Softsol — Convierte WhatsApp en un vendedor 24/7" />
+  <meta name="twitter:description" content="IA + WhatsApp para que tu negocio venda solo. Sin contratar más personal." />
+  <meta name="twitter:image" content="https://softsol.com.co/og-image.svg" />
+
+  <!-- JSON-LD · Organization + FAQPage para Google rich snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Softsol",
+    "alternateName": "Software Solution Latam",
+    "url": "https://softsol.com.co/",
+    "logo": "https://softsol.com.co/favicon.svg",
+    "description": "Automatización de negocios con IA y WhatsApp. Agentes conversacionales, control de viáticos, cartera, inventario y operaciones.",
+    "founder": { "@type": "Person", "name": "Oscar Iván Díaz Portilla" },
+    "foundingDate": "2018",
+    "areaServed": { "@type": "Country", "name": "Colombia" },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+57-315-593-5407",
+      "contactType": "sales",
+      "availableLanguage": ["Spanish"]
+    }
+  }
+  </script>
+
+  <!-- Tailwind (CDN play — cero build) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+          colors: {
+            neon: { cyan: '#22d3ee', violet: '#a855f7', pink: '#ec4899' }
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Tipografía + iconos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@600;800&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- ============================================================
+       TRACKING · DESACTIVADO POR DEFECTO
+       Descomenta y reemplaza los IDs cuando vayas a lanzar campañas.
+       - GA4: reemplaza G-XXXXXXXXXX por tu Measurement ID
+       - Meta Pixel: reemplaza 0000000000000000 por tu Pixel ID
+       - El evento "whatsapp_click" se dispara automáticamente (ver app.js)
+       ============================================================ -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '0000000000000000');
+    fbq('track', 'PageView');
+  </script>
+  -->
+</head>
+<body class="relative">
+
+  <!-- Orbes de fondo -->
+  <div class="bg-orb cyan"   style="width:420px;height:420px;top:-80px;left:-120px;"></div>
+  <div class="bg-orb violet" style="width:520px;height:520px;top:30%;right:-140px;"></div>
+  <div class="bg-orb pink"   style="width:380px;height:380px;bottom:-100px;left:30%;"></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav-blur fixed top-0 inset-x-0 z-50">
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-2 font-extrabold tracking-tight">
+        <span class="inline-block w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-violet-500 shadow-[0_0_20px_rgba(34,211,238,.6)]"></span>
+        <span>Softsol<span class="text-cyan-300">.</span></span>
+      </a>
+      <ul class="hidden lg:flex items-center gap-6 text-sm text-slate-300">
+        <li><a href="#problema"   class="hover:text-white">Problema</a></li>
+        <li><a href="#solucion"   class="hover:text-white">Solución</a></li>
+        <li><a href="#productos"  class="hover:text-white">Productos</a></li>
+        <li><a href="#resultados" class="hover:text-white">Resultados</a></li>
+        <li><a href="#demos"      class="hover:text-white">Casos</a></li>
+        <li><a href="#por-que"    class="hover:text-white">Por qué</a></li>
+        <li><a href="#faq-sec"    class="hover:text-white">FAQ</a></li>
+      </ul>
+      <a href="https://wa.me/573155935407?text=Hola%20Oscar%2C%20vi%20Softsol%20y%20quiero%20agendar%20la%20llamada%20de%2020%20minutos." target="_blank" rel="noopener" class="btn-neon text-sm">
+        <i class="bi bi-whatsapp"></i> Agendar llamada gratis
+      </a>
+    </nav>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section id="top" class="relative pt-36 pb-24 px-6">
+    <div class="max-w-7xl mx-auto relative z-10 text-center">
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs uppercase tracking-[.25em] text-cyan-300">
+        <span class="w-1.5 h-1.5 rounded-full bg-cyan-300 animate-pulse"></span>
+        Softsol · IA + WhatsApp · Activo desde 2018
+      </span>
+      <h1 class="mt-6 text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.04]">
+        Convierte WhatsApp en un vendedor 24/7<br/>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-cyan-300 to-violet-400">que responde, vende y hace seguimiento por ti</span>
+      </h1>
+      <p class="mt-5 text-xl md:text-2xl text-slate-200 font-medium max-w-3xl mx-auto">
+        y empieza a generar más ingresos <strong class="text-white">sin contratar más personal</strong>.
+      </p>
+      <p class="mt-6 max-w-2xl mx-auto text-lg text-slate-300">
+        Implementamos sistemas inteligentes que atienden clientes, organizan tu operación
+        y hacen seguimiento automático — <strong class="text-cyan-300">24/7</strong>.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-4 justify-center">
+        <a href="https://wa.me/573155935407?text=Hola%20Oscar%2C%20vi%20Softsol%20y%20quiero%20automatizar%20mi%20negocio.%20%C2%BFCu%C3%A1ndo%20podemos%20hablar%3F" target="_blank" rel="noopener" class="btn-neon"><i class="bi bi-whatsapp"></i> Quiero automatizar mi negocio</a>
+        <a href="#productos" class="btn-ghost"><i class="bi bi-grid-3x3-gap"></i> Ver productos</a>
+      </div>
+      <p class="mt-4 text-xs text-slate-400"><i class="bi bi-shield-check text-cyan-300"></i> Sin compromiso · Diagnóstico gratuito de 20 min · Respuesta el mismo día</p>
+
+      <!-- Urgencia / escasez -->
+      <div class="mt-8 inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-amber-400/40 bg-amber-400/5 scarcity-pulse">
+        <span class="relative flex h-2.5 w-2.5">
+          <span class="absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75 animate-ping"></span>
+          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-400"></span>
+        </span>
+        <span class="text-sm text-amber-200 font-medium">Solo acepto <strong class="text-amber-100">3 negocios nuevos</strong> por mes</span>
+      </div>
+
+      <!-- mini-stats -->
+      <div class="mt-14 grid grid-cols-2 gap-4 max-w-2xl mx-auto">
+        <div class="glass p-6">
+          <div class="text-4xl md:text-5xl font-extrabold text-white">70%</div>
+          <div class="mt-1 text-xs uppercase tracking-widest text-slate-400">del tiempo que hoy pierdes</div>
+        </div>
+        <div class="glass p-6">
+          <div class="text-4xl md:text-5xl font-extrabold text-white">24/7</div>
+          <div class="mt-1 text-xs uppercase tracking-widest text-slate-400">respuesta a tus clientes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROBLEMA ============ -->
+  <section id="problema" class="relative py-24 px-6">
+    <div class="max-w-6xl mx-auto relative z-10">
+      <div class="text-center mb-14 max-w-3xl mx-auto">
+        <span class="inline-flex items-center gap-2 text-xs uppercase tracking-[.3em] text-rose-300">
+          <i class="bi bi-exclamation-triangle-fill"></i> El problema real
+        </span>
+        <h2 class="text-4xl md:text-5xl font-extrabold mt-3 leading-tight">
+          Tu negocio pierde dinero <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-amber-400">todos los días</span>.
+        </h2>
+        <p class="mt-5 text-slate-300 text-lg">Y probablemente ni siquiera te das cuenta exactamente de dónde.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="pain-card reveal">
+          <div class="icon"><i class="bi bi-clock-history"></i></div>
+          <h3 class="text-lg font-bold text-white">Clientes que no respondes a tiempo</h3>
+          <p class="mt-2 text-sm text-slate-300 leading-relaxed">Cada mensaje sin contestar en la primera hora es una venta que se va a la competencia. Y tú ni te enteras.</p>
+        </div>
+        <div class="pain-card reveal">
+          <div class="icon"><i class="bi bi-cash-stack"></i></div>
+          <h3 class="text-lg font-bold text-white">Desorden en pagos y deudas</h3>
+          <p class="mt-2 text-sm text-slate-300 leading-relaxed">Cuentas por cobrar olvidadas, pagos que no cuadran, reportes que llegan tarde. El dinero se fuga en los detalles.</p>
+        </div>
+        <div class="pain-card reveal">
+          <div class="icon"><i class="bi bi-telephone-x"></i></div>
+          <h3 class="text-lg font-bold text-white">Falta de seguimiento a clientes</h3>
+          <p class="mt-2 text-sm text-slate-300 leading-relaxed">No hay segundo contacto, no hay recordatorios, no hay upsell. El cliente se enfría y no vuelve a comprarte.</p>
+        </div>
+        <div class="pain-card reveal">
+          <div class="icon"><i class="bi bi-arrow-repeat"></i></div>
+          <h3 class="text-lg font-bold text-white">Tiempo perdido en tareas repetitivas</h3>
+          <p class="mt-2 text-sm text-slate-300 leading-relaxed">Tu equipo escribe los mismos mensajes, llena los mismos formatos y copia datos entre sistemas todos los días.</p>
+        </div>
+      </div>
+
+      <p class="text-center mt-10 text-lg text-slate-200">
+        👉 Y todo eso <strong class="text-cyan-300">se puede automatizar</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ SOLUCIÓN ============ -->
+  <section id="solucion" class="relative py-24 px-6">
+    <div class="max-w-6xl mx-auto relative z-10">
+      <div class="text-center mb-14 max-w-3xl mx-auto">
+        <span class="inline-flex items-center gap-2 text-xs uppercase tracking-[.3em] text-cyan-300">
+          <i class="bi bi-lightbulb-fill"></i> Nuestra solución
+        </span>
+        <h2 class="text-4xl md:text-5xl font-extrabold mt-3 leading-tight">
+          Creamos sistemas inteligentes <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-violet-400">adaptados a tu negocio</span>.
+        </h2>
+        <p class="mt-5 text-slate-300 text-lg">Una sola plataforma, cinco capacidades conectadas entre sí. Todo corriendo sobre WhatsApp + IA + automatización.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="solution-card reveal">
+          <div class="icon"><i class="bi bi-whatsapp"></i></div>
+          <h3 class="text-lg font-bold text-white">Atención automática por WhatsApp</h3>
+          <p class="mt-2 text-sm text-slate-300 leading-relaxed">Agentes conversacionales que responden, cotizan y cierran ventas sin que nadie tenga que estar pendiente del celular.</p>
+        </div>
+        <div class="solution-card reveal">
+          <div class="icon"><i class="bi bi-chat-square-text"></i></div>
+          <h3 class="text-lg font-bold text-white">Captura sin formularios aburridos</h3>
+          <p class="mt-2 text-sm text-slate-300 leading-relaxed">La IA recoge la información del cliente conversando, no llenando campos. Conversión mucho más alta y fricción cero.</p>
+        </div>
+        <div class="solution-card reveal">
+          <div class="icon"><i class="bi bi-diagram-3"></i></div>
+          <h3 class="text-lg font-bold text-white">Procesos internos organizados</h3>
+          <p class="mt-2 text-sm text-slate-300 leading-relaxed">Pedidos, legalizaciones, registros y reportes conectados entre sí. Sin doble digitación ni Excel perdidos por correo.</p>
+        </div>
+        <div class="solution-card reveal">
+          <div class="icon"><i class="bi bi-bell"></i></div>
+          <h3 class="text-lg font-bold text-white">Recordatorios y seguimiento automático</h3>
+          <p class="mt-2 text-sm text-slate-300 leading-relaxed">Cartera, citas, postventa, renovaciones. El sistema persigue a los clientes; tu equipo solo cierra los que ya están listos.</p>
+        </div>
+        <div class="solution-card reveal">
+          <div class="icon"><i class="bi bi-activity"></i></div>
+          <h3 class="text-lg font-bold text-white">Detección de problemas y sugerencias</h3>
+          <p class="mt-2 text-sm text-slate-300 leading-relaxed">La IA te avisa antes de que estalle: saldos bajos, cuellos de botella y patrones extraños en tu operación.</p>
+        </div>
+        <div class="solution-card reveal solution-cta">
+          <div class="icon"><i class="bi bi-rocket-takeoff"></i></div>
+          <h3 class="text-lg font-bold text-white">¿Listo para ver cómo aplica en tu caso?</h3>
+          <p class="mt-2 text-sm text-slate-300 leading-relaxed">Agenda 20 minutos. Te muestro qué procesos de tu negocio son automatizables y cuánto te ahorrarían.</p>
+          <a href="https://wa.me/573155935407?text=Hola%20Oscar%2C%20quiero%20que%20me%20ayudes%20a%20identificar%20qu%C3%A9%20puedo%20automatizar%20en%20mi%20negocio." target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cyan-300 hover:gap-3 transition-all">Hablar con Softsol <i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============ AUTO-CALIFICACIÓN ============ -->
+  <section id="para-ti" class="relative py-24 px-6">
+    <div class="max-w-4xl mx-auto relative z-10">
+      <div class="text-center mb-10">
+        <span class="inline-flex items-center gap-2 text-xs uppercase tracking-[.3em] text-emerald-300">
+          <i class="bi bi-check2-circle"></i> ¿Te suena familiar?
+        </span>
+        <h2 class="text-4xl md:text-5xl font-extrabold mt-3 leading-tight">
+          Esto es para ti <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-cyan-300 to-violet-400">si al menos una marca "sí"</span>.
+        </h2>
+      </div>
+
+      <div class="glass p-8 md:p-10">
+        <ul class="space-y-4">
+          <li class="fit-item">
+            <i class="bi bi-check-circle-fill"></i>
+            <span>Atiendes clientes por WhatsApp y ya no das abasto respondiendo.</span>
+          </li>
+          <li class="fit-item">
+            <i class="bi bi-check-circle-fill"></i>
+            <span>Sientes que <strong class="text-white">pierdes ventas por falta de seguimiento</strong> a los clientes que ya mostraron interés.</span>
+          </li>
+          <li class="fit-item">
+            <i class="bi bi-check-circle-fill"></i>
+            <span>Tienes procesos manuales o desordenados (Excel compartidos, fotos por WhatsApp, cuadernos).</span>
+          </li>
+          <li class="fit-item">
+            <i class="bi bi-check-circle-fill"></i>
+            <span>Quieres crecer <strong class="text-white">sin contratar más personal</strong>, sin cambiar de sistemas y sin capacitar un equipo nuevo.</span>
+          </li>
+        </ul>
+
+        <div class="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p class="text-sm text-slate-300">Si marcaste al menos una, ya sé cómo ayudarte.</p>
+          <a href="https://wa.me/573155935407?text=Hola%20Oscar%2C%20me%20identifiqu%C3%A9%20con%20varias%20cosas%20del%20sitio%20de%20Softsol%20y%20quiero%20hablar%20contigo." target="_blank" rel="noopener" class="btn-neon text-sm">
+            <i class="bi bi-whatsapp"></i> Escribir ahora por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============ PRODUCTOS · 4 LÍNEAS DE BENEFICIO ============ -->
+  <section id="productos" class="relative py-24 px-6">
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="text-center mb-14 max-w-3xl mx-auto">
+        <span class="inline-flex items-center gap-2 text-xs uppercase tracking-[.3em] text-cyan-300">
+          <i class="bi bi-boxes"></i> Nuestros productos
+        </span>
+        <h2 class="text-4xl md:text-5xl font-extrabold mt-3 leading-tight">
+          Cuatro formas de <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-violet-400">ganar dinero con IA</span>.
+        </h2>
+        <p class="mt-5 text-slate-300 text-lg">
+          Mismo motor, cuatro aplicaciones. Elige la que se parece a lo que te duele hoy — cada una conecta con casos reales ya funcionando.
+        </p>
+      </div>
+
+      <div id="buckets-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6"><!-- JS --></div>
+
+      <div class="mt-12 text-center">
+        <a href="#demos" class="btn-ghost text-sm"><i class="bi bi-arrow-down-circle"></i> Ver todos los casos del showroom</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESULTADOS AGREGADOS ============ -->
+  <section id="resultados" class="relative py-24 px-6">
+    <div class="max-w-6xl mx-auto relative z-10">
+      <div class="text-center mb-12 max-w-3xl mx-auto">
+        <span class="inline-flex items-center gap-2 text-xs uppercase tracking-[.3em] text-emerald-300">
+          <i class="bi bi-graph-up-arrow"></i> Resultados reales
+        </span>
+        <h2 class="text-4xl md:text-5xl font-extrabold mt-3 leading-tight">
+          Los negocios que automatizan con nosotros <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-cyan-300">logran esto</span>.
+        </h2>
+      </div>
+
+      <div id="resultados-grid" class="grid grid-cols-2 lg:grid-cols-4 gap-4"><!-- JS --></div>
+
+      <p class="text-center mt-10 text-slate-400 text-sm">Cifras observadas en los casos del showroom y reportadas por clientes reales.</p>
+    </div>
+  </section>
+
+  <!-- ============ SHOWROOM / DEMOS ============ -->
+  <section id="demos" class="relative py-24 px-6">
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="text-center mb-8">
+        <span class="text-xs uppercase tracking-[.3em] text-cyan-300">Showroom completo</span>
+        <h2 class="text-4xl md:text-5xl font-extrabold mt-2">Todos los casos, <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-violet-400">filtrados a tu medida</span></h2>
+        <p class="mt-4 text-slate-300 max-w-2xl mx-auto">Nueve soluciones construidas con una misma disciplina. Elige la categoría que te interese o revísalas todas.</p>
+      </div>
+
+      <div id="filter-bar" class="filter-bar"><!-- JS --></div>
+
+      <div id="bento" class="bento"><!-- JS --></div>
+
+      <p id="filter-empty" class="text-center text-slate-400 mt-8 hidden">No hay casos en esta categoría todavía.</p>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIOS / VOCES DE USO ============ -->
+  <section id="testimonios" class="relative py-24 px-6">
+    <div class="max-w-6xl mx-auto relative z-10">
+      <div class="text-center mb-14 max-w-3xl mx-auto">
+        <span class="inline-flex items-center gap-2 text-xs uppercase tracking-[.3em] text-emerald-300">
+          <i class="bi bi-chat-quote-fill"></i> Voces de uso
+        </span>
+        <h2 class="text-4xl md:text-5xl font-extrabold mt-3 leading-tight">
+          Lo que escuchamos <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-cyan-300">en los casos</span>.
+        </h2>
+        <p class="mt-5 text-slate-300 text-lg">
+          Reflejos del impacto real medido en cada caso del showroom. Haz clic en cualquier tarjeta para leer el proyecto completo.
+        </p>
+      </div>
+
+      <div id="testimonios-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5"><!-- JS --></div>
+
+      <p class="text-center mt-10 text-slate-500 text-xs italic">
+        Voces parafraseadas a partir de los resultados medidos en cada proyecto. Atribuidas a rol y sector para preservar la confidencialidad de los clientes.
+      </p>
+    </div>
+  </section>
+
+ 
+
+  <!-- ============ PROCESO ============ -->
+  <section id="proceso-sec" class="relative py-24 px-6">
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="text-center mb-12">
+        <span class="text-xs uppercase tracking-[.3em] text-cyan-300">Cero sorpresas</span>
+        <h2 class="text-4xl md:text-5xl font-extrabold mt-2">Sabes exactamente <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-violet-400">qué pagas y cuándo</span>.</h2>
+        <p class="mt-4 text-slate-300 max-w-2xl mx-auto">Nada de “ya casi”. Cada fase tiene un entregable concreto que validas tú antes de pasar a la siguiente. Si algo no encaja, paramos.</p>
+      </div>
+      <div id="proceso" class="grid md:grid-cols-2 lg:grid-cols-4 gap-5"><!-- JS --></div>
+    </div>
+  </section>
+
+  <!-- ============ POR QUÉ SOFTSOL · Diferencial ============ -->
+  <section id="por-que" class="relative py-24 px-6">
+    <div class="max-w-6xl mx-auto relative z-10">
+      <div class="text-center mb-12 max-w-3xl mx-auto">
+        <span class="inline-flex items-center gap-2 text-xs uppercase tracking-[.3em] text-cyan-300">
+          <i class="bi bi-stars"></i> Por qué Softsol
+        </span>
+        <h2 class="text-4xl md:text-5xl font-extrabold mt-3 leading-tight">
+          No vendemos software <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-violet-400">genérico</span>.
+        </h2>
+        <p class="mt-5 text-slate-300 text-lg">
+          Cuatro cosas que hacen distintos a nuestros productos — y que la mayoría de "fábricas de software" todavía no entienden.
+        </p>
+      </div>
+
+      <div id="garantias" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4"><!-- JS --></div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq-sec" class="relative py-24 px-6">
+    <div class="max-w-4xl mx-auto relative z-10">
+      <div class="text-center mb-10">
+        <span class="text-xs uppercase tracking-[.3em] text-cyan-300">Lo que todos preguntan</span>
+        <h2 class="text-4xl md:text-5xl font-extrabold mt-2">Las dudas que <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-violet-400">te están frenando</span>.</h2>
+        <p class="mt-4 text-slate-300 max-w-xl mx-auto">Si ya te quemaste con otro desarrollador, lee esto antes de hablar conmigo.</p>
+      </div>
+      <div id="faq" class="space-y-3"><!-- JS --></div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL / CONTACTO ============ -->
+  <section id="contacto" class="relative py-24 px-6">
+    <div class="max-w-5xl mx-auto glass p-10 md:p-14 text-center relative overflow-hidden">
+      <div class="bg-orb cyan"   style="width:300px;height:300px;top:-100px;left:-60px;opacity:.25;"></div>
+      <div class="bg-orb violet" style="width:340px;height:340px;bottom:-120px;right:-80px;opacity:.25;"></div>
+      <h2 class="relative text-3xl md:text-5xl font-extrabold">Cada semana que esperas,<br/>es dinero que se va en tareas manuales.</h2>
+      <p class="relative mt-4 text-slate-300 max-w-2xl mx-auto">Agenda una llamada de 20 minutos. Te digo si tu caso se puede automatizar, cuánto costaría y en cuánto tiempo lo recuperas. Si no hay encaje, te lo digo de frente.</p>
+      <div class="relative mt-8 flex flex-wrap gap-4 justify-center">
+        <a href="https://wa.me/573155935407?text=Hola%20Oscar%2C%20vi%20Softsol%20y%20quiero%20agendar%20la%20llamada%20de%2020%20min." target="_blank" rel="noopener" class="btn-neon">
+          <i class="bi bi-whatsapp"></i> Escribir por WhatsApp
+        </a>
+        <a href="mailto:oscar.diazpt@gmail.com?subject=Quiero%20automatizar%20mi%20negocio%20con%20Softsol" class="btn-ghost">
+          <i class="bi bi-envelope"></i> Enviar correo
+        </a>
+      </div>
+      <p class="relative mt-4 text-xs text-slate-400">Respuesta en menos de 12 horas hábiles.</p>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="relative border-t border-white/5 py-10 px-6">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4 text-sm text-slate-400">
+      <div>&copy; <span id="year"></span> Softsol · Software Solution Latam</div>
+      <div class="flex items-center gap-4">
+        <a href="https://wa.me/573155935407" class="hover:text-cyan-300"><i class="bi bi-whatsapp"></i></a>
+        <a href="mailto:oscar.diazpt@gmail.com" class="hover:text-cyan-300"><i class="bi bi-envelope"></i></a>
+        
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ MODAL DE PROYECTO ============ -->
+  <div id="project-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel glass" role="document">
+      <button class="modal-close" data-close aria-label="Cerrar">
+        <i class="bi bi-x-lg"></i>
+      </button>
+      <div id="modal-body"><!-- contenido dinámico --></div>
+    </div>
+  </div>
+
+ 
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

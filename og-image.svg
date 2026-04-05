@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#05060a"/>
+      <stop offset="100%" stop-color="#0b0f1a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6ee7b7"/>
+      <stop offset="50%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <linearGradient id="logo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <radialGradient id="orbCyan" cx="0.15" cy="0.2" r="0.5">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbViolet" cx="0.85" cy="0.8" r="0.5">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Fondo -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#orbCyan)"/>
+  <rect width="1200" height="630" fill="url(#orbViolet)"/>
+
+  <!-- Logo arriba a la izquierda -->
+  <g transform="translate(80, 80)">
+    <rect width="56" height="56" rx="12" fill="url(#logo)"/>
+    <text x="28" y="40" text-anchor="middle"
+          font-family="Inter, sans-serif" font-size="32" font-weight="800" fill="#05060a">S</text>
+    <circle cx="44" cy="34" r="3" fill="#05060a"/>
+    <text x="76" y="38" font-family="Inter, sans-serif" font-size="32" font-weight="800" fill="#ffffff">Softsol.</text>
+  </g>
+
+  <!-- Eyebrow -->
+  <g transform="translate(80, 200)">
+    <rect x="0" y="0" width="340" height="40" rx="20" fill="#ffffff" fill-opacity="0.05" stroke="#22d3ee" stroke-opacity="0.4"/>
+    <circle cx="24" cy="20" r="5" fill="#22d3ee"/>
+    <text x="42" y="26" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#22d3ee" letter-spacing="3">SOFTSOL · IA + WHATSAPP</text>
+  </g>
+
+  <!-- Título principal -->
+  <text x="80" y="320" font-family="Inter, sans-serif" font-size="68" font-weight="800" fill="#ffffff" letter-spacing="-1.5">Convierte WhatsApp</text>
+  <text x="80" y="395" font-family="Inter, sans-serif" font-size="68" font-weight="800" fill="url(#accent)" letter-spacing="-1.5">en un vendedor 24/7.</text>
+
+  <!-- Subtítulo -->
+  <text x="80" y="465" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#cbd5e1">Genera más ingresos sin contratar más personal.</text>
+
+  <!-- KPIs en la parte inferior -->
+  <g transform="translate(80, 510)">
+    <rect x="0" y="0" width="220" height="80" rx="14" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.1"/>
+    <text x="20" y="42" font-family="Inter, sans-serif" font-size="38" font-weight="800" fill="#ffffff">70%</text>
+    <text x="20" y="66" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#94a3b8">menos tiempo manual</text>
+
+    <rect x="240" y="0" width="220" height="80" rx="14" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.1"/>
+    <text x="260" y="42" font-family="Inter, sans-serif" font-size="38" font-weight="800" fill="#ffffff">24/7</text>
+    <text x="260" y="66" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#94a3b8">atención automática</text>
+
+    <rect x="480" y="0" width="220" height="80" rx="14" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.1"/>
+    <text x="500" y="42" font-family="Inter, sans-serif" font-size="38" font-weight="800" fill="#ffffff">+60%</text>
+    <text x="500" y="66" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#94a3b8">más respuesta</text>
+  </g>
+
+  <!-- URL -->
+  <text x="1120" y="600" text-anchor="end" font-family="Inter, sans-serif" font-size="16" font-weight="500" fill="#64748b">softsol · IA + WhatsApp</text>
+</svg>
