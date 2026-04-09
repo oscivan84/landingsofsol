@@ -396,7 +396,25 @@
   const y = document.getElementById("year");
   if (y) y.textContent = new Date().getFullYear();
 
-  // ---------- 10. Tracking de clicks a WhatsApp ----------
+  // ---------- 10. Mobile menu ----------
+  const menuBtn = document.getElementById("mobile-menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener("click", () => {
+      const open = mobileMenu.classList.toggle("hidden");
+      menuBtn.setAttribute("aria-expanded", !open);
+      menuBtn.querySelector("i").className = open ? "bi bi-list text-xl" : "bi bi-x-lg text-xl";
+    });
+    mobileMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.querySelector("i").className = "bi bi-list text-xl";
+      });
+    });
+  }
+
+  // ---------- 11. Tracking de clicks a WhatsApp ----------
   // Dispara evento "whatsapp_click" a GA4 y Meta Pixel si están cargados.
   // Funciona aunque los pixels no estén activos (los checks evitan errores).
   document.addEventListener("click", (e) => {

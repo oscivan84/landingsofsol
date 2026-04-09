@@ -1011,6 +1011,164 @@ body {
 
 body.modal-open { overflow: hidden; }
 
+/* ---------- Mobile menu ---------- */
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(5,6,10,.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  padding: 0 1.5rem;
+  animation: menu-slide .25s ease;
+}
+@keyframes menu-slide {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.mobile-menu-link {
+  display: block;
+  padding: .75rem .5rem;
+  font-size: .95rem;
+  color: #cbd5e1;
+  border-bottom: 1px solid rgba(255,255,255,.05);
+  transition: color .2s ease, padding-left .2s ease;
+}
+.mobile-menu-link:hover,
+.mobile-menu-link:active {
+  color: #22d3ee;
+  padding-left: 1rem;
+}
+
+/* ---------- Mobile responsive · comprehensive ---------- */
+
+/* Small phones */
+@media (max-width: 480px) {
+  /* Hero */
+  #top h1 { font-size: 2rem; }
+  #top h1 .text-transparent { font-size: inherit; }
+  #top .text-xl { font-size: 1.05rem; }
+  #top .text-lg { font-size: .95rem; }
+
+  /* KPI numbers */
+  .kpi-number { font-size: 2.4rem; }
+
+  /* Scarcity badge */
+  .scarcity-pulse { padding: .4rem .8rem; }
+  .scarcity-pulse .text-sm { font-size: .78rem; }
+
+  /* Section headings */
+  h2.text-4xl { font-size: 1.75rem !important; }
+
+  /* Stats in project cards */
+  .project-card .stats { gap: .8rem; }
+  .project-card .stats .text-2xl { font-size: 1.35rem; }
+
+  /* Modal stats grid */
+  .modal-hero .grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* CTA final */
+  #contacto h2 { font-size: 1.6rem; }
+  #contacto .glass { padding: 2rem 1.2rem; }
+
+  /* Buttons full width */
+  #top .flex-wrap,
+  #contacto .flex-wrap { flex-direction: column; }
+  #top .flex-wrap .btn-neon,
+  #top .flex-wrap .btn-ghost,
+  #contacto .flex-wrap .btn-neon,
+  #contacto .flex-wrap .btn-ghost {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Bucket cards */
+  .bucket-inner { padding: 1.5rem 1.2rem; }
+  .bucket-card h3 { font-size: 1.25rem; }
+  .bucket-cta { width: 100%; justify-content: center; }
+
+  /* Pain & solution cards */
+  .pain-card, .solution-card { padding: 1.3rem 1.2rem; }
+
+  /* Filter pills scroll horizontal */
+  .filter-bar {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: .5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .filter-bar::-webkit-scrollbar { display: none; }
+  .filter-pill { white-space: nowrap; flex-shrink: 0; }
+}
+
+/* Medium phones & small tablets */
+@media (max-width: 640px) {
+  /* Hero adjustments */
+  #top { padding-top: 6rem; padding-bottom: 3rem; }
+  #top h1 { font-size: 2.4rem; line-height: 1.1; }
+
+  /* General sections */
+  section { padding-top: 4rem; padding-bottom: 4rem; }
+
+  /* Section headings */
+  h2 { word-break: break-word; }
+
+  /* Results grid 2→1 on small */
+  #resultados-grid { grid-template-columns: 1fr !important; }
+
+  /* Mini stats in hero */
+  .glass.p-6 { padding: 1rem; }
+  .glass .text-4xl { font-size: 2rem; }
+
+  /* Fit section */
+  .glass.p-8 { padding: 1.5rem; }
+  .fit-item { font-size: .9rem; gap: .6rem; }
+  .fit-item i { font-size: 1.15rem; }
+
+  /* Footer */
+  footer .flex-wrap { flex-direction: column; text-align: center; gap: 1rem; }
+
+  /* Process grid */
+  #proceso { grid-template-columns: 1fr !important; }
+
+  /* Why cards */
+  #garantias { grid-template-columns: 1fr !important; }
+
+  /* Testimonials */
+  #testimonios-grid { grid-template-columns: 1fr !important; }
+  .testimonial-card { padding: 1.5rem 1.2rem 1.2rem; }
+
+  /* Nav padding */
+  nav.max-w-7xl { padding-left: 1rem; padding-right: 1rem; }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  /* Orbs: reduce size to prevent layout issues */
+  .bg-orb { opacity: 0.2; }
+
+  /* Modal full screen on tablets */
+  .modal { padding: .5rem; }
+  .modal-panel { max-height: 95vh; border-radius: 1rem; }
+}
+
+/* Touch device improvements */
+@media (hover: none) {
+  /* Show stats always on touch (no hover) */
+  .project-card .stats {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .project-card .open-hint {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ---------- Scrollbar ---------- */
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: #05060a; }

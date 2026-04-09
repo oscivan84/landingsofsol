@@ -125,9 +125,27 @@
         <li><a href="#por-que"    class="hover:text-white">Por qué</a></li>
         <li><a href="#faq-sec"    class="hover:text-white">FAQ</a></li>
       </ul>
-      <a href="https://wa.me/573155935407?text=Hola%20Oscar%2C%20vi%20Softsol%20y%20quiero%20agendar%20la%20llamada%20de%2020%20minutos." target="_blank" rel="noopener" class="btn-neon text-sm">
-        <i class="bi bi-whatsapp"></i> Agendar llamada gratis
-      </a>
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/573155935407?text=Hola%20Oscar%2C%20vi%20Softsol%20y%20quiero%20agendar%20la%20llamada%20de%2020%20minutos." target="_blank" rel="noopener" class="btn-neon text-sm">
+          <i class="bi bi-whatsapp"></i> <span class="hidden sm:inline">Agendar llamada gratis</span>
+        </a>
+        <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg border border-white/15 bg-white/5 text-slate-300" aria-label="Abrir menú" aria-expanded="false">
+          <i class="bi bi-list text-xl"></i>
+        </button>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="mobile-menu hidden">
+        <ul class="flex flex-col gap-1 py-3">
+          <li><a href="#problema"   class="mobile-menu-link">Problema</a></li>
+          <li><a href="#solucion"   class="mobile-menu-link">Solución</a></li>
+          <li><a href="#productos"  class="mobile-menu-link">Productos</a></li>
+          <li><a href="#resultados" class="mobile-menu-link">Resultados</a></li>
+          <li><a href="#demos"      class="mobile-menu-link">Casos</a></li>
+          <li><a href="#por-que"    class="mobile-menu-link">Por qué</a></li>
+          <li><a href="#faq-sec"    class="mobile-menu-link">FAQ</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
